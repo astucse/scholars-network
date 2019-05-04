@@ -72,5 +72,7 @@ abstract class User implements Authenticatable
         return encrypt($this->id);
     }
 
+    abstract public function identity();
+
 
 }

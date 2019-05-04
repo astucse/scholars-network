@@ -54,6 +54,10 @@ class Representative extends User
         parent::__construct($email,$name,$password);
         // $this->phone_number = $phone_number;
     }
+    
+    public function identity(){
+      return "representative";
+    }
 
 
 }

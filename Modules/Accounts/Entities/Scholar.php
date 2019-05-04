@@ -56,5 +56,9 @@ class Scholar extends User
         // $this->phone_number = $phone_number;
     }
 
+    public function identity(){
+      return "scholar";
+    }
+
 
 }
