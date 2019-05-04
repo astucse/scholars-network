@@ -26,7 +26,7 @@
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="{{route('page.index')}}" class="navbar-brand"><b>Scholars</b>Network</a>
+          <a href="{{route('index')}}" class="navbar-brand"><b>Scholars</b>Network</a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
             <i class="fa fa-bars"></i>
           </button>
@@ -36,8 +36,8 @@
         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
             <ul class="nav navbar-nav">
               @guest
-              <li class="active"><a href="{{route('page.index')}}">Home<span class="sr-only">(current)</span></a></li>
-              <li><a href="{{route('page.index')}}">Contact us<span class="sr-only">(current)</span></a></li>
+              <li class="active"><a href="{{route('index')}}">Home<span class="sr-only">(current)</span></a></li>
+              <li><a href="{{route('index')}}">Contact us<span class="sr-only">(current)</span></a></li>
               @else
 
               @if (Auth::user()->scholar)
@@ -104,17 +104,19 @@
     </div>
     <!-- ./wrapper -->
 
-    <!-- jQuery 3 -->
-    <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Vue js -->
+		<script src="/js/vue.js"></script>
+		@yield('js')
+    <!-- <script src="/assets/bower_components/jquery/dist/jquery.min.js"></script> -->
     <!-- Bootstrap 3.3.7 -->
-    <script src="/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
     <!-- SlimScroll -->
-    <script src="/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- <script src="/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script> -->
     <!-- FastClick -->
-    <script src="/assets/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- <script src="/assets/bower_components/fastclick/lib/fastclick.js"></script> -->
     <!-- AdminLTE App -->
-    <script src="/assets/dist/js/adminlte.min.js"></script>
+    <!-- <script src="/assets/dist/js/adminlte.min.js"></script> -->
     <!-- AdminLTE for demo purposes -->
-    <script src="/assets/dist/js/demo.js"></script>
+    <!-- <script src="/assets/dist/js/demo.js"></script> -->
     </body>
     </html>

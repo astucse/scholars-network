@@ -17,14 +17,15 @@ class MainController extends Controller
 {
   protected $em;
 
-  public function __construct(EntityManagerInterface $em){
+  public function __construct(EntityManagerInterface $em)
+  {
       $this->em = $em;
+      $this->middleware('guest')->only(['index']);
   }
-  
+
   public function index()
   {
       return view('main::index');
   }
-
 
 }

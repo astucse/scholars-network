@@ -23,11 +23,25 @@ class AccountsController extends Controller
       // $this->middleware('guest')->only(['login','login_post','signin','signin_post','kkk','signin_company','signin_buyer']);
   }
 
-  public function signin(){
+  public function register(){
       // return $this->em->getRepository(CompanyCategory::class);
-      return view('accounts::guest.signin',[
-          'categories' =>  $this->em->getRepository(CompanyCategory::class)->findAll()
+      return view('accounts::guest.register',[
+          // 'categories' =>  $this->em->getRepository(CompanyCategory::class)->findAll()
       ]);
+  }
+  public function register_scholar(Request $request){
+    $password = $request['password'];
+    $email = $request['email'];
+    $name = $request['name'];
+    $s = new Scholar($email,$name,$password);
+    try {
+      $this->em->persist($s);
+      $this->em->flush();
+    } catch (\Exception $e) {
+      // return $e->getMessage();
+      return redirect()->back()->withErrors(['Email exists']);
+    }
+    return redirect()->back()->with(['message'=>'check your email for confirmation']);
   }
   public function logout(){
       Auth::logout();
@@ -36,7 +50,7 @@ class AccountsController extends Controller
   public function login(){
       return view('accounts::guest.login');
   }
-  public function login_post(Request $request){
+  public function login_submit(Request $request){
       if(Auth::attempt([
           'email' => $request['email'],
           'password' => $request['password']

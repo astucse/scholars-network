@@ -52,7 +52,7 @@ class Representative extends User
     public function __construct($email,$name,$password)
     {
         parent::__construct($email,$name,$password);
-        $this->phone_number = $phone_number;
+        // $this->phone_number = $phone_number;
     }
 
 

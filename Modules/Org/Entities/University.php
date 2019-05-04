@@ -64,5 +64,9 @@ class University
       $this->is_registered = false;
     }
 
+    public function isGovernmental(){
+      return $this->governmental;
+    }
+
 
 }

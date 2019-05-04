@@ -13,11 +13,11 @@ user :name
   /home/scholar
   /home/university
 
-  /login
+  /login      /login_submit
   /logout
-  /signin
-    /signin_scholar
-    /signin_university
+  /register
+    /register_scholar
+    /register_university
 
   /university/{code}
   /scholar/{slug}

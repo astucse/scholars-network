@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'MainController@index');
+Route::get('/', 'MainController@index')->name('index');
+Route::get('/home/university', 'MainController@home_university')->name('home.university');
+Route::get('/home/scholar', 'MainController@home_scholar')->name('home.scholar');
 Route::prefix('main')->group(function() {
-  
+
 });

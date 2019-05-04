@@ -22,12 +22,12 @@ class Scholar extends User
 
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     protected $phone_number;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=True)
      */
     protected $location_country;
 
@@ -53,7 +53,7 @@ class Scholar extends User
     public function __construct($email,$name,$password)
     {
         parent::__construct($email,$name,$password);
-        $this->phone_number = $phone_number;
+        // $this->phone_number = $phone_number;
     }
 
 
